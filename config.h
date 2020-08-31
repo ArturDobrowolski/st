@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:pixelsize=12:antialias=true:autohint=true";
+//static char *font = "Fantasque Sans Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "FiraCode Regular:pixelsize=12:antialias=true:autohint=true";
 static char *font2[] = {
 	"Noto Color Emoji:pixelsize=14:antialiast=true:autohint=true",
 };
