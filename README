@@ -1,34 +1,15 @@
-st - simple terminal
---------------------
-st is a simple terminal emulator for X which sucks less.
+Artur's build of the st terminal emulator (st-0.8.4)
+----------------------------------------------------
 
-
-Requirements
-------------
-In order to build st you need the Xlib header files.
-
-
-Installation
-------------
-Edit config.mk to match your local setup (st is installed into
-the /usr/local namespace by default).
-
-Afterwards enter the following command to build and install st (if
-necessary as root):
-
-    make clean install
-
-
-Running st
-----------
-If you did not install st with make clean install, you must compile
-the st terminfo entry with the following command:
-
-    tic -sx st.info
-
-See the man page for additional details.
-
-Credits
--------
-Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
-
+Main features of the fork:
+The following patches were adapted to work with st-0.8.4 and applied:
+    1. st-alpha: Patch that allows transparent terminal window -- https://st.suckless.org/patches/alpha/
+    2. st-xresources: This patch adds the ability to configure st via Xresources -- https://st.suckless.org/patches/xresources/
+    3. st-font2: This patch allows to add spare font besides default -- https://st.suckless.org/patches/font2/
+    4. st-clipboard: Shared clipboard between text-based apps and X apps -- https://st.suckless.org/patches/clipboard/
+    5. st-rightclickpaste: Pressing right-click pastes from the primary-selection -- https://st.suckless.org/patches/rightclickpaste/
+    6. st-scrollback: Allows scrollback through terminal output -- https://st.suckless.org/patches/scrollback/
+    7. st-scrollback-mouse: Allow scrollback using mouse wheel -- https://st.suckless.org/patches/scrollback/
+    
+Changed some default keybinding.
+Added the ability to tweak opacity level via the Xresources file.
