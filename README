@@ -1,15 +1,61 @@
-Artur's build of the st terminal emulator (st-0.8.4)
+Artur's build of the st terminal emulator [st-0.8.4]
 ----------------------------------------------------
 
-Main features of the fork:
-The following patches were adapted to work with st-0.8.4 and applied:
-    1. st-alpha: Patch that allows transparent terminal window -- https://st.suckless.org/patches/alpha/
-    2. st-xresources: This patch adds the ability to configure st via Xresources -- https://st.suckless.org/patches/xresources/
-    3. st-font2: This patch allows to add spare font besides default -- https://st.suckless.org/patches/font2/
-    4. st-clipboard: Shared clipboard between text-based apps and X apps -- https://st.suckless.org/patches/clipboard/
-    5. st-rightclickpaste: Pressing right-click pastes from the primary-selection -- https://st.suckless.org/patches/rightclickpaste/
-    6. st-scrollback: Allows scrollback through terminal output -- https://st.suckless.org/patches/scrollback/
-    7. st-scrollback-mouse: Allow scrollback using mouse wheel -- https://st.suckless.org/patches/scrollback/
+st (simple/suckless terminal) is a simple terminal implementation for X made by suckless.org
+
+The following patches were applied:
+    1. st-alpha: Patch that allows transparent terminal window		
+		https://st.suckless.org/patches/alpha/
+    2. st-xresources: This patch adds the ability to configure st via the Xresources file
+		https://st.suckless.org/patches/xresources/
+    3. st-font2: This patch allows to add spare font besides default
+		https://st.suckless.org/patches/font2/
+    4. st-clipboard: Shared clipboard between text-based apps and X apps
+		https://st.suckless.org/patches/clipboard/
+    5. st-rightclickpaste: Pressing right-click pastes from the primary-selection
+		https://st.suckless.org/patches/rightclickpaste/
+    6. st-scrollback: Allows scrollback through terminal output
+		https://st.suckless.org/patches/scrollback/
+    7. st-scrollback-mouse: Allow scrollback using mouse wheel
+		https://st.suckless.org/patches/scrollback/
+	8. st-externalpipe: Reading and writing st's screen through a pipe
+		https://st.suckless.org/patches/externalpipe/
+	9. st-externalpipe-eternal: Allows externalpipe to access the entire terminal history
+		https://st.suckless.org/patches/externalpipe/
     
-Changed some default keybinding.
-Added the ability to tweak opacity level via the Xresources file.
+Some of the patches above were slightly modified to play nicely with st version 0.8.4
+
+Additional features of this build:
+* Added the ability to tweak opacity level via the Xresources file.
+* Implemented copyurlcmd function to easily copy urls to system clipboard via the externalpipe.
+* Implemented openurlcmd function to easily open urls with default system browser via the external pipe.
+
+NOTE: copyurlcmd and openurlcmd pipe their output to external scripts for some extra handling. 
+
+You can download them from:
+https://github.com/ArturDobrowolski/scripts/st-urlcopy
+https://github.com/ArturDobrowolski/scripts/st-urlopen
+Scripts must reside inside of the system PATH.
+
+Both the functions use dmenu as a selection prompt, and xurls to search the terminal output for urls,
+so you have to install approprieate packages to make full use of this build.
+
+-----------------------------------
+Keyboard shortcuts:
+	Alt+c - copy to clipboard
+	Alt+v - paste from clipboard
+	Alt+j - scroll down
+	Alt+k - scroll up
+	Alt+d - scroll down faster
+	Alt+u - scroll up faster
+	Shift+Alt+u - zoom in
+	Shift+Alt+d - zoom out
+	Shift+Alt+Home - zoom reset
+
+Mouse shortcuts:
+	Shift+wheel up - scroll up
+	Shift+wheel down - scroll down
+	Shift+Alt+wheel up - zoom in
+	Shift+Alt+wheel down - zoom out
+	RMB - paste from clipboard
+-----------------------------------

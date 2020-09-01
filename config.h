@@ -223,6 +223,12 @@ ResourcePref resources[] = {
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (Mod1Mask|ShiftMask)
+static char *openurlcmd[] = { "/bin/sh", "-c",
+	"st-urlopen",
+	"externalpipe", NULL };
+static char *copyurlcmd[] = { "/bin/sh", "-c",
+	"st-urlcopy",
+	"externalpipe", NULL };
 
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
@@ -241,21 +247,16 @@ static Shortcut shortcuts[] = {
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
 	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
 	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY,               XK_j,           kscrolldown,    {.i = +1} },
 	{ MODKEY,               XK_k,           kscrollup,      {.i = +1} },
-	{ MODKEY,               XK_Down,        kscrolldown,    {.i = +1} },
-	{ MODKEY,               XK_Up,          kscrollup,      {.i = +1} },
 	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
 	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
-	{ MODKEY,               XK_Down,        kscrolldown,    {.i = -1} },
-	{ MODKEY,               XK_Up,          kscrollup,      {.i = -1} },
 	{ TERMMOD,              XK_U,           zoom,           {.f = +1} },
 	{ TERMMOD,              XK_D,           zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ MODKEY,		XK_y,		externalpipe,	{.v = copyurlcmd} },
+	{ MODKEY,		XK_o,		externalpipe,	{.v = openurlcmd} },	
 };
 
 /*
