@@ -40,7 +40,7 @@ Scripts must reside inside of the system PATH.
 Both the functions use dmenu as a selection prompt, and xurls to search the terminal output for urls,
 so you have to install approprieate packages to make full use of this build.
 
------------------------------------
+
 Keyboard shortcuts:
 	Alt+c - copy to clipboard
 	Alt+v - paste from clipboard
@@ -58,4 +58,3 @@ Mouse shortcuts:
 	Shift+Alt+wheel up - zoom in
 	Shift+Alt+wheel down - zoom out
 	RMB - paste from clipboard
------------------------------------
