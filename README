@@ -33,8 +33,7 @@ Additional features of this build:
 NOTE: copyurlcmd and openurlcmd pipe their output to external scripts for some extra handling. 
 
 Scripts can be downloaded from:
-https://github.com/ArturDobrowolski/scripts/st-urlcopy
-https://github.com/ArturDobrowolski/scripts/st-urlopen
+https://github.com/ArturDobrowolski/scripts
 Scripts must reside inside of the system PATH.
 
 Both the functions use dmenu as a selection prompt, and xurls to search the terminal output for urls,
