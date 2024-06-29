@@ -1,4 +1,4 @@
-# Custom [st-9.2](https://git.suckless.org/st/) build
+# Custom [st-0.9.2](https://git.suckless.org/st/) build
 
 ## Modded with the following patches:
 1. [Xresources](https://st.suckless.org/patches/xresources/)
